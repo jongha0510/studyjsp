@@ -1,0 +1,16 @@
+workspace → .metadata → .plugins → org.eclipse.wst.server.core → tmp0 → work → Catalina → localhost → 해당파일 경로로 이동 → 자바파일 열기
+
+
+ch03 폴더에 count.jsp 파일 추가
+
+<body>
+	<%! int globalCount = 0; %>
+	<% int localCount = 0; %>
+	<%
+		globalCount++;
+		localCount++;
+	%>
+
+	globalCount = <%=globalCount %>
+	localCount = <%= localCount %>
+</body>

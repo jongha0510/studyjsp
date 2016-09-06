@@ -1,0 +1,44 @@
+File → New → Dynamic Web Project
+
+web study-01
+
+※확인사항 
+
+Target Runtime // 아파치 톰캣 8.0인지 확인必
+
+web study-01 → WebContent 폴더안에 우클릭 New → JSP File
+
+파일명 Hello World로 → Next
+JSP templates
+8번째 항목 New javaserver Faces (JSF) page html
+edit 
+<!doctype html>
+<html lang="ko">
+<meta charset="${encoding}">
+
+
+addition01.jsp
+<%
+		int num1 = 20;
+		int num2 = 10;
+		int sum = num1 + num2;
+		%>
+		<%=num1%> + <%=num2%> = <%=sum%>
+
+
+
+
+@WebServlet("/AdditionServlet01") 서버에서 쓸 주소
+
+toget
+int num1 = 20;
+int num2 = 10;
+int sum = num1 + num2;
+
+request.setAttribute("num1", num1);
+request.setAttribute("num2", num2);
+request.setAttribute("sum", sum);
+
+RequestDispatcher dispatcher = 
+	request.getRequestDispatcher("addition03.jsp");
+dispatcher.forward(request, response);
